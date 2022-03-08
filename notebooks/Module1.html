@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Module 1: Introduction to RDF &#8212; LOD tutorial</title>
+    <title>Module 1: Basic Principles &#8212; LOD tutorial</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -99,7 +99,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Module 1: Introduction to RDF
+   Module 1: Basic Principles
   </a>
  </li>
  <li class="toctree-l1">
@@ -210,7 +210,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Module 1: Introduction to RDF
+   Module 1: Basic Principles
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -308,8 +308,8 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-1-introduction-to-rdf">
-<h1>Module 1: Introduction to RDF<a class="headerlink" href="#module-1-introduction-to-rdf" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-1-basic-principles">
+<h1>Module 1: Basic Principles<a class="headerlink" href="#module-1-basic-principles" title="Permalink to this headline">¶</a></h1>
 <p><em><strong>Level: Beginner (100)</strong></em></p>
 <p>Learning objectives:</p>
 <ul class="simple">
@@ -322,17 +322,22 @@
 <p>In 2009 the British Museum initiated ResearchSpace to connect to the various museum collections in London using Linked Open Data. Their introductory video explains how this can give us new knowledge about the past and how historical narratives may evolve:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe src=&quot;https://player.vimeo.com/video/540172221?h=51d3108111&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://player.vimeo.com/video/540172221?h=51d3108111&#39;</span> <span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">640</span> <span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">360</span> <span class="p">))</span>       
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/IPython/core/display.py:724: UserWarning: Consider using IPython.display.IFrame instead
-  warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
-</pre></div>
-</div>
-<div class="output text_html"><iframe src="https://player.vimeo.com/video/540172221?h=51d3108111" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://player.vimeo.com/video/540172221?h=51d3108111"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
 </div>
 <p>The general vision behind the Semantic Web is to make the Web more accessible to computers. While humans are able to read texts, the computer needs machine readable data that is structured and interlinked. Although that data in itself is nothing more than bits and bytes of information, when it is analyzed an interpreted it can give valuable information, new insights and it can support humans taking informed decissions.</p>
 <p>The nature of the Web is that information is distributed. In this global information sharing system, everyone is allowed to contribute by uploading information or adding webpages. Like this the Web is growing on an estonishing scale and every person with a computer or smart phone can access this information. We are living in the greatest information revolution, never before did people have access to these amounts of information. This same weblike nature is also part of the Semantic Web, every party can independently publish datasets on the Web, another party can annotate, create links between datasets or analyse and use it. The full Semantic Web vision is still not materialized, but many are contributing, including galleries, museums, libraries and archives.</p>
@@ -340,13 +345,20 @@
 <p>Tim Berners-Lee: The next Web of open, linked data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe id=&quot;kmsembed-1_rckqw53w&quot; width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://video.leidenuniv.nl/embed/secure/iframe/entryId/1_rckqw53w/uiConfId/44110401/st/0&quot; class=&quot;kmsembed&quot; allowfullscreen webkitallowfullscreen mozAllowFullScreen allow=&quot;autoplay *; fullscreen *; encrypted-media *&quot; referrerPolicy=&quot;no-referrer-when-downgrade&quot; sandbox=&quot;allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation&quot; frameborder=&quot;0&quot; title=&quot;Kaltura Player&quot;&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://video.leidenuniv.nl/embed/secure/iframe/entryId/1_rckqw53w/uiConfId/44110401/st/0 &#39;</span> <span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">640</span> <span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">360</span> <span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><iframe id="kmsembed-1_rckqw53w" width="640" height="360" src="https://video.leidenuniv.nl/embed/secure/iframe/entryId/1_rckqw53w/uiConfId/44110401/st/0" class="kmsembed" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" referrerPolicy="no-referrer-when-downgrade" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe></div></div>
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://video.leidenuniv.nl/embed/secure/iframe/entryId/1_rckqw53w/uiConfId/44110401/st/0 "
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
 </div>
 </div>
 <div class="section" id="wolfram-alpha">
@@ -377,6 +389,7 @@ height 22.6 cm × width 18.7 cm
 <h2>The RDF data model<a class="headerlink" href="#the-rdf-data-model" title="Permalink to this headline">¶</a></h2>
 <p>How can the meaning then be described, in an accurate way so that machines are able to process this? To  capture the intended semantics of the data, it is essential to have a knowledge representation system and ontologies. The philosophical discipline of ontology is the study of what exists and what are the relationships between the entities that exist. Classifying entities and discerning part-whole relations gives us a systematic way to organize knowledge and grasp the reality surrounding us. The Linnaean taxonomy, for example, as proposed in the Systema Naturae (1735) tried to sytematically organize the natural world into kingdoms (the Animal, Vegetable and Mineral Kingdoms), classes, orders, genera and eventually this classified the individual species. Such a classification systems increases our understanding of singular entities, such as ‘a cat is a mammal’, ‘Covid is a virus disease’, and ‘violet red is a color’.</p>
 <p>For the Web to be semantic, it needs ontologies to provide a shared understanding of a domain. Over time better organized taxonomies were created and especially in our age of information explosion more complex and flexible classifications are reached. The ontologies used for the Web are non-hierarchical, it aims to represent the fluidity of the real world, where things can be related to each other in more complex ways and without being fixed. Things can endlessly be grouped in new ways, in that sense the structure of a Linked Data ontology is more like a spider’s web.</p>
+<p><img alt="interface.jpg" src="notebooks/attachment:interface.jpg" /></p>
 <p>On the semantic Web, the RDF data model is used as a knowledge representation. The fundamental concepts of RDF are resources, properties, statements and graphs.</p>
 </div>
 <div class="section" id="resources">
@@ -385,15 +398,23 @@ height 22.6 cm × width 18.7 cm
 <p>For instance, we are searching for a particular person, let’s say Jack Straw. The unique identifier given to that person is a number comparible with a telephone number, it is a specific number through which you can find that person. However, Jack Straw is both the name of a fourteenth-century English rebel and a UK cabinet minister prominent in Tony Blair’s administration. It is clearly useful to be able to differentiate the two people who share a common name, so each person is represented by a unique number, let’s make the UK minister Jack Straw number 64183282, and Jack Straw described as ‘the enigmatic rebel leader’ number 33059614. Providing that everyone uses these two numbers to refer to the respective Jack Straws, we can now search for person 64183282 in a linked open dataset and can be confident that we are getting the right person - in this case, the minister.</p>
 <p>Jack Straw the modern politician was a member of British Parliament, representing the seat of Blackburn. There’s more than one place in the UK called Blackburn, not to mention other Blackburns around the world. Using the same principles as outlined above, we can disambiguate between the various Blackburns by assigning a unique identifier to the correct place: Blackburn in Lancashire, England.</p>
 <p>At first sights, this may look simular as a library system, but there is an essential difference. Around the world there are many libraries, each with their own database and each giving their own numbers to for example the person ‘Jack Straw’. So the number ‘330596140’ in a library system does no longer identify unique individuals outside of that particular database. In contrast, URI references are designed to be unique across the Web.</p>
+<p><img alt="viaf.jpg" src="notebooks/attachment:viaf.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe id=&quot;kmsembed-1_s86bua2l&quot; width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://video.leidenuniv.nl/embed/secure/iframe/entryId/1_s86bua2l/uiConfId/44110401/st/0&quot; class=&quot;kmsembed&quot; allowfullscreen webkitallowfullscreen mozAllowFullScreen allow=&quot;autoplay *; fullscreen *; encrypted-media *&quot; referrerPolicy=&quot;no-referrer-when-downgrade&quot; sandbox=&quot;allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation&quot; frameborder=&quot;0&quot; title=&quot;Kaltura Player&quot;&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://video.leidenuniv.nl/embed/secure/iframe/entryId/1_s86bua2l/uiConfId/44110401/st/0&#39;</span> <span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">640</span> <span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">360</span> <span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><iframe id="kmsembed-1_s86bua2l" width="640" height="360" src="https://video.leidenuniv.nl/embed/secure/iframe/entryId/1_s86bua2l/uiConfId/44110401/st/0" class="kmsembed" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" referrerPolicy="no-referrer-when-downgrade" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe></div></div>
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://video.leidenuniv.nl/embed/secure/iframe/entryId/1_s86bua2l/uiConfId/44110401/st/0"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
 </div>
 <p>Therefore, URI’s are recorded in so-called authority files, such as the VIAF authority file. In the video above, the VIAF ID number ‘33059614’ is used as a search term to find Jack Straw in various libraries around the world. While all describe this person slightly different, they all mean the same person. Under the VIAF ID, there is a permalink, that’s the URI. HTTP URIs make it possible for people (as well as machines) to find concepts and idnetify that all these “Jack Straws” are the same person.</p>
 </div>
@@ -404,6 +425,7 @@ height 22.6 cm × width 18.7 cm
 <div class="section" id="statements">
 <h2>Statements<a class="headerlink" href="#statements" title="Permalink to this headline">¶</a></h2>
 <p>A statement consists of a subject, a predicate and an object. This may be best understood by an example of graphical representation of a RDF statement:</p>
+<p><img alt="statement.jpg" src="notebooks/attachment:statement.jpg" /></p>
 <p>On the left, we see 1) the subject (‘Mona Lisa’), followed by 2) the predicate (‘created by’) and 3) the object (‘Leonardo da Vinci’). As a statement is always consisting of three components, it is also referred to as a triple.</p>
 </div>
 <div class="section" id="graphs">
