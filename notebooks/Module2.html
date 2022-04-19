@@ -124,6 +124,16 @@
    GLAM Workbenches
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RKD_SPARQL.html">
+   RKD SPARQL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WIkiData_SPARQL.html">
+   WikiData SPARQL
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -306,14 +316,14 @@
 <span class="n">Publisher</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">publisher</span>
 </pre></div>
 </div>
-<p>The association between “year of publication” and “dcterms:date” may be slightly questionable. The National Library of Germany has specified a more specific property “<a class="reference external" href="https://d-nb.info/standards/elementset/gnd#dateOfPublication">dateOfPublication</a>”. In his situation, we have have following some conventions in this area. Libraries often describe the year of publication using “dcterms:date”.</p>
+<p>The association between “year of publication” and “dcterms:date” may be slightly questionable. The National Library of Germany has specified a more specific property “<a class="reference external" href="https://d-nb.info/standards/elementset/gnd#dateOfPublication">dateOfPublication</a>”. In this situation, we have have followed conventions that have emerged in this situation. Libraries often describe the year of publication using “dcterms:date”.</p>
 <p>The column named “ID” will not be connected to a URI, as this columns will be used to identify the records. As identifiers for the individual books, we shall use the numbers given in the ID column of the CSV file.</p>
 <p>We are now ready to convert the CSV file. This tutorial will explain two tools: COW and LDWizard.</p>
 <p><em><strong>Converting CSV file to RDF using LDWizards</strong></em></p>
 <ol class="simple">
 <li><p>Open LDWizard via <a class="reference external" href="https://ldwizard.netwerkdigitaalerfgoed.nl/#1">https://ldwizard.netwerkdigitaalerfgoed.nl/#1</a></p></li>
 <li><p>Upload your CSV file.</p></li>
-<li><p>Under “Key column”, how the various records in the data set ought to be identified. You can select one of the existing columns for this purpose. If none of the columns are suitable, you can also select the row number. In our example, we select the column named “ID”</p></li>
+<li><p>Under “Key column”, the various records in the data set ought to be identified. You can select one of the existing columns for this purpose. If none of the columns are suitable, you can also select the row number. In our example, we select the column named “ID”</p></li>
 <li><p>Under Resource class IRI, specify the type of reources that are being described in the data set. Note that you can also search for terms in the LDWizard. If you type in a term, the tool will suggest a number of valid suggestions. In this example, we select “<a class="reference external" href="http://purl.org/dc/terms/BibliographicResource">http://purl.org/dc/terms/BibliographicResource</a>”</p></li>
 <li><p>Supply a base URI under “Advanced”</p></li>
 <li><p>For each of the columns in your dataset, indicate the URI they should be connected to. You can copy and paste the URIs you found yourself, or you can make use of the pull-down menu provided by the LDWizard tool.</p></li>
@@ -354,12 +364,7 @@
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercise-2-1">
 <h2>Exercise 2.1<a class="headerlink" href="#exercise-2-1" title="Permalink to this headline">¶</a></h2>
-<p>Uploaden van een dataset mbv LDWizards and COW</p>
-<ul class="simple">
-<li><p>Wiki data / RKD</p></li>
-<li><p>Europeana</p></li>
-<li><p>KB</p></li>
-</ul>
+<p>[To be added]</p>
 </div>
 </div>
 

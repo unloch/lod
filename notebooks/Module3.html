@@ -124,6 +124,16 @@
    GLAM Workbenches
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RKD_SPARQL.html">
+   RKD SPARQL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WIkiData_SPARQL.html">
+   WikiData SPARQL
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -346,13 +356,14 @@
 </div>
 </div>
 <p>SPARQL queries look quite similar to regular RDF triples. A significant difference, however, is that certain components are replaced with variables. If you compare the query contained within the curly brackets following WHERE to the full RDF statement that was discussed earlier, you can see that the literal value that was used as a predicate (i.e., the actual name associated with the subject) has been replaced with a variable named ?name.</p>
-<p>You are free to choose the name of the variables yourself. In the SPARQL language, variables always start with a question mark. It is advisable to work with meaningful names, such as ?place for places or ?date for dates.</p>
+<p>You are free to choose the name of the variables yourself. In the SPARQL language, variables always start with a question mark. It is advisable to work with meaningful names, such as <code class="docutils literal notranslate"><span class="pre">?place</span></code> for places or <code class="docutils literal notranslate"><span class="pre">?date</span></code> for dates.</p>
 </div>
 <div class="section" id="select-and-where">
 <h2>SELECT and WHERE<a class="headerlink" href="#select-and-where" title="Permalink to this headline">¶</a></h2>
 <p>To change a sentence into an actual SPARQL query, you also need to add the keywords SELECT and WHERE. The curly brackets that follow WHERE, contain one or more ‘incomplete’ RDF statements, or statements in which one of the central components (subject, object, and predicate) are replaced with variables. In the example above, the request is to ‘fill in the blanks’, or, in other words, to find the correct value for the variable.</p>
-<p>In the SELECT clause, you specify the variables whose values you would like to see. In this example there is only one variable, namely, ?name. The SPARQL query will return a table. The number of columns will be the same as the number of variables you mention after SELECT. Each value that can be found to complete one of the RDF statements in the WHERE clause will be displayed will generate a new row in this table.</p>
-<p>If you run the query above in the RKD SPARQL endpoint, available at <a class="reference external" href="https://data.netwerkdigitaalerfgoed.nl/rkd/rkdartists/sparql/rkdartists">https://data.netwerkdigitaalerfgoed.nl/rkd/rkdartists/sparql/rkdartists</a>, the SPARQL engine will then try to complete the query. The values that are found are assigned to the variables. If everything goes well, you will see that the identifier that was supplied is associated with Vincent van Gogh.</p>
+<p>In the SELECT clause, you specify the variables whose values you would like to see. In this example there is only one variable, namely, <code class="docutils literal notranslate"><span class="pre">?name</span></code>. The SPARQL query will return a table. The number of columns will be the same as the number of variables you mention after SELECT. Each value that can be found to complete one of the RDF statements in the WHERE clause will be displayed will generate a new row in this table.</p>
+<p>As was explained earlier, SPARL queries can be executed at a SPARQL endpoint. An endpoint is essentially a web application on which you can access an institution’s RDF data.</p>
+<p>If you run the query above in the RKD SPARQL endpoint, available at <a class="reference external" href="https://data.netwerkdigitaalerfgoed.nl/rkd/rkdartists/sparql/rkdartists">https://data.netwerkdigitaalerfgoed.nl/rkd/rkdartists/sparql/rkdartists</a>, the SPARQL engine will then try to complete the query. The values that are found are assigned to the variables. If everything goes well, you will see that the identifier that was supplied is associated with Vincent van Gogh, the artist associated with RKD identifier <a class="reference external" href="https://rkd.nl/en/explore/artists/32439">32439</a>.</p>
 <p>This is the basis of working with SPARQL.</p>
 </div>
 <div class="section" id="multiple-variables">
@@ -497,7 +508,7 @@
 </div>
 <div class="section" id="wiki-query-services">
 <h2>Wiki query services<a class="headerlink" href="#wiki-query-services" title="Permalink to this headline">¶</a></h2>
-<p>Since 2015, Wikidata has provided services that can help you build SPARQL queries. One service is called the <strong>query builder</strong>. It can be accessed via <a class="reference external" href="https://query.wikidata.org/querybuilder/">https://query.wikidata.org/querybuilder/</a>. This tool offers a visual interface that can be used to build simple SPARQL queries. Although that this service is limited in making SPARQL queries, it can be helpful if you do not have a lot of experience yet with building SPARQL queries.</p>
+<p>Since 2015, Wikidata has provided services that can help you build SPARQL queries. One service is called the <strong>query builder</strong>. It can be accessed via <a class="reference external" href="https://query.wikidata.org/querybuilder/">https://query.wikidata.org/querybuilder/</a>. This tool offers a visual interface that can be used to build simple SPARQL queries. Although this service is limited in making SPARQL queries, it can be helpful if you do not have a lot of experience yet with building SPARQL queries.</p>
 <p>Another service offered by WikiData is the <strong>query service</strong> accessible via <a class="reference external" href="https://query.wikidata.org/">https://query.wikidata.org/</a>. The Wikidata Query Service offers opportunities for building SPARQL queries and downloading the requested data in various file formats (including JSON and CSV). It is also possible to view the data in different data visualizations, like a table, a bar chart or a timeline.</p>
 </div>
 </div>
@@ -505,14 +516,46 @@
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="exercise-3-1">
 <h2>Exercise 3.1.<a class="headerlink" href="#exercise-3-1" title="Permalink to this headline">¶</a></h2>
-<p>Use the Wiki Query Builder to find artworks made by Leonardo da Vinci created after 1495. Run the query and look at the results</p>
-<p>Above the result (at the right top), there is a link to the Query Service. Open this query within the Wiki Query Service,</p>
+<p>Use the <a class="reference external" href="https://query.wikidata.org/querybuilder/">WikiData Query Builder</a> to find artworks made by Leonardo da Vinci created after 1495.</p>
+<p>Tip: Type in ‘Creator’ under property, and ‘Leonardo da Vinci’ under ‘value’. Next, click on “Add condition”. In a new condition type in “inception” under property and ‘1495’ under ‘value’. Next, run the query.</p>
 </div>
 <div class="section" id="exercise-3-2">
 <h2>Exercise 3.2.<a class="headerlink" href="#exercise-3-2" title="Permalink to this headline">¶</a></h2>
-<p>Use the query that you have built in the previous exercise (artworks made by Leonardo da Vinci created after 1495) and show it in the Wiki Query Service.</p>
-<p>Change the year into 1505 and the artist in Michelangelo. The standard limit is 100 items, set the limit to 1000.</p>
-<p>Go to Download at the top right of the results screen and download a CSV file.</p>
+<p>If you cannot manage to build the query using the <a class="reference external" href="https://query.wikidata.org/querybuilder/">WikiData Query Builder</a>, you can open the <a class="reference external" href="https://query.wikidata.org/">Query Service</a> and copy and paste <a class="reference external" href="https://query.wikidata.org/#SELECT%20%3Fwork%20%3Fdate%20%3FworkLabel%20%0A%0AWHERE%20%20%0A%7B%20%20%20%0A%3Fwork%20wdt%3AP170%20wd%3AQ762%20.%20%20%0A%3Fwork%20wdt%3AP571%20%3Fdate%20%0AFILTER%28%3Fdate%20%3E%3D%20%22%2B1496-00-00T00%3A00%3A00Z%22%5E%5Exsd%3AdateTime%29%0ASERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%20%20%0A%7D%20">the query below</a> in the central text field.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sparql-nb notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="nv">?work</span> <span class="nv">?date</span> <span class="nv">?workLabel</span> 
+
+<span class="k">WHERE</span>  
+<span class="p">{</span>   
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P170</span> <span class="nn">wd</span><span class="p">:</span><span class="nt">Q762</span> <span class="p">.</span>  
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P571</span> <span class="nv">?date</span> 
+<span class="k">FILTER</span><span class="p">(</span><span class="nv">?date</span> <span class="o">&gt;=</span> <span class="s">&quot;+1496-00-00T00:00:00Z&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span><span class="p">)</span>
+<span class="k">SERVICE</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">label</span> <span class="p">{</span> <span class="nn">bd</span><span class="p">:</span><span class="nt">serviceParam</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">language</span> <span class="s">&quot;en&quot;</span> <span class="p">.</span> <span class="p">}</span>  
+<span class="p">}</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, try to artist in this query to Michelangelo, who is identified on Wikidata as <code class="docutils literal notranslate"><span class="pre">'wd:Q5592'</span></code>, and also try to change the year into 1505.</p>
+<p>Finally, find the “Download” button at the top right of the results screen and download the results of the query as a CSV file.</p>
+<p>This new query should have the following form.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sparql-nb notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?work</span> <span class="nv">?date</span> <span class="nv">?workLabel</span> 
+
+<span class="k">WHERE</span>  
+<span class="p">{</span>   
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P170</span> <span class="nn">wd</span><span class="p">:</span><span class="nt">Q5592</span> <span class="p">.</span>  
+<span class="nv">?work</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P571</span> <span class="nv">?date</span> 
+<span class="k">FILTER</span><span class="p">(</span><span class="nv">?date</span> <span class="o">&gt;=</span> <span class="s">&quot;+1505-00-00T00:00:00Z&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span><span class="p">)</span>
+<span class="k">LIMIT</span> <span class="mi">1000</span>
+<span class="k">SERVICE</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">label</span> <span class="p">{</span> <span class="nn">bd</span><span class="p">:</span><span class="nt">serviceParam</span> <span class="nn">wikibase</span><span class="p">:</span><span class="nt">language</span> <span class="s">&quot;en&quot;</span> <span class="p">.</span> <span class="p">}</span>  
+<span class="p">}</span> 
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 

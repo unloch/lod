@@ -124,6 +124,16 @@
    GLAM Workbenches
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RKD_SPARQL.html">
+   RKD SPARQL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WIkiData_SPARQL.html">
+   WikiData SPARQL
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -315,11 +325,11 @@
 <p>Learning objectives:</p>
 <ul class="simple">
 <li><p>Introduction to the basic principles of Linked Open Data (LOD)</p></li>
-<li><p>Developing an understaning of the application of LOD is applied in heritage institutions</p></li>
+<li><p>Developing an understanding of how LOD is applied within heritage institutions</p></li>
 </ul>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Galleries, libraries, archives and museum collections hold valuable insights into the past. Yet for writing historical accounts, one is still dependent on accessing each institution separately. What if we could explore the past by searching through all these institutional collections at the same time? This would not only simplify the work of historians and researchers in general, it could also allow asking more complex questions. To be able to integrate information across different institutions, this data needs to be shared and connected on the Web, while still being searchable by machines to index and retrieve information. Here, the Semantic Web offers essential solutions.</p>
+<p>Galleries, libraries, archives and museum collections hold valuable insights into the past. Yet for writing historical accounts, one is still dependent on accessing each institution separately. What if we could explore the past by searching through all these institutional collections at the same time? This would not only simplify the work of historians and researchers in general, but it could also allow asking more complex questions. To be able to integrate information across different institutions, this data needs to be shared and connected on the Web, while still being searchable by machines to index and retrieve information. Here, the Semantic Web offers essential solutions.</p>
 </div>
 <div class="section" id="researchspace">
 <h2>ResearchSpace<a class="headerlink" href="#researchspace" title="Permalink to this headline">¶</a></h2>
@@ -343,8 +353,8 @@
 ></iframe>
 </div></div>
 </div>
-<p>The general vision behind the Semantic Web is to make the Web more accessible to computers. While humans are able to read texts, the computer needs machine readable data that is structured and interlinked. Although that data in itself is nothing more than bits and bytes of information, when it is analyzed an interpreted it can give valuable information, new insights and it can support humans taking informed decissions.</p>
-<p>The nature of the Web is that information is distributed. In this global information sharing system, everyone is allowed to contribute by uploading information or adding webpages. Like this the Web is growing on an estonishing scale and every person with a computer or smart phone can access this information. We are living in the greatest information revolution, never before did people have access to these amounts of information. This same weblike nature is also part of the Semantic Web, every party can independently publish datasets on the Web, another party can annotate, create links between datasets or analyse and use it. The full Semantic Web vision is still not materialized, but many are contributing, including galleries, museums, libraries and archives.</p>
+<p>The general vision behind the Semantic Web is to make the Web more accessible to computers. While humans are able to read texts, the computer needs machine readable data that is structured and interlinked. Although that data in itself is nothing more than bits and bytes of information, when it is analyzed and interpreted it can give valuable information, new insights and it can support humans taking informed decisions.</p>
+<p>The nature of the Web is that information is distributed. In this global information sharing system, everyone is allowed to contribute by uploading information or adding webpages. Like this the Web is growing on an astonishing scale and every person with a computer or smart phone can access this information. We are living in the greatest information revolution, never before did people have access to these amounts of information. This same weblike nature is also part of the Semantic Web, every party can independently publish datasets on the Web, another party can annotate, create links between datasets or analyse and use it. The full Semantic Web vision is still not materialized, but many are contributing, including galleries, museums, libraries and archives.</p>
 <p>The technology underpinning the Semantic Web is called Linked Data. One of its inventors is Tim Berners Lee and in this video he will explain how he wants to reframe the Web from a global file system (the Web of documents) to a global database (the Web of data):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -370,7 +380,7 @@
 </div>
 <div class="section" id="from-html-to-xml">
 <h2>From HTML to XML<a class="headerlink" href="#from-html-to-xml" title="Permalink to this headline">¶</a></h2>
-<p>For understanding the basic principles of the Semantic Web, it is good to unravel the layered approach that was taken to build it. The first essential step is to make (semi-)structured data available on the Web. Currently, the predominant language on the Web is HTML. Although that most web pages are still written in HTML, machines will encounter problems while reading this web content. For example:</p>
+<p>For understanding the basic principles of the Semantic Web, it is good to unravel the layered approach that was taken to build it. The first essential step is to make (semi-)structured data available on the Web. Currently, the predominant language on the Web is HTML. Although most web pages are still written in HTML, machines will encounter problems while reading this web content. For example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Rembrandt van Rijn 
 Self-portrait 
 c. 1628 
@@ -386,21 +396,22 @@ height 22.6 cm × width 18.7 cm
 &lt;height&gt;22.6 cm &lt;/height &gt; × &lt;width&gt; 18.7 cm &lt;/width&gt; 
 </pre></div>
 </div>
-<p>Now the computer is able to distinguish the artist, the title and the year of this artwork. This representation is more easily processable by machines and also known as eXtensible Markup Language (XML) technology. In contrast to HTML, XML language allows structuring information on web pages. Yet structuring information is not enough to make the Web semantic, therefore we also need a language that it able to describe meaning.</p>
+<p>Now the computer is able to distinguish the artist, the title and the year of this artwork. This representation is more easily processable by machines and also known as eXtensible Markup Language (XML) technology. In contrast to HTML, XML language allows structuring information on web pages. Yet structuring information is not enough to make the Web semantic, therefore we also need a language that is able to describe meaning.</p>
 </div>
 <div class="section" id="the-rdf-data-model">
 <h2>The RDF data model<a class="headerlink" href="#the-rdf-data-model" title="Permalink to this headline">¶</a></h2>
-<p>How can the meaning then be described, in an accurate way so that machines are able to process this? To  capture the intended semantics of the data, it is essential to have a knowledge representation system and ontologies. The philosophical discipline of ontology is the study of what exists and what are the relationships between the entities that exist. Classifying entities and discerning part-whole relations gives us a systematic way to organize knowledge and grasp the reality surrounding us. The Linnaean taxonomy, for example, as proposed in the <em>Systema Naturae</em> (1735) tried to sytematically organize the natural world into kingdoms (the Animal, Vegetable and Mineral Kingdoms), classes, orders, genera and eventually this classified the individual species. Such a classification systems increases our understanding of singular entities, such as ‘a cat is a mammal’, ‘Covid is a virus disease’, and ‘violet red is a color’.</p>
+<p>How can the meaning then be described, in an accurate way so that machines are able to process this? To  capture the intended semantics of the data, it is essential to have a knowledge representation system and ontologies. The philosophical discipline of ontology is the study of what exists and what are the relationships between the entities that exist. Classifying entities and discerning part-whole relations gives us a systematic way to organize knowledge and grasp the reality surrounding us. The Linnaean taxonomy, for example, as proposed in the <em>Systema Naturae</em> (1735) tried to organize the natural world systematically into kingdoms (the Animal, Vegetable and Mineral Kingdoms), classes, orders and genera, and eventually this system was used to classify the individual species. Such a classification system increases our understanding of singular entities, such as ‘a cat is a mammal’, or ‘Covid is a virus disease’, and ‘red is a color’.</p>
 <p>For the Web to be semantic, it needs ontologies to provide a shared understanding of a domain. Over time better organized taxonomies were created and especially in our age of information explosion more complex and flexible classifications are reached. The ontologies used for the Web are non-hierarchical, it aims to represent the fluidity of the real world, where things can be related to each other in more complex ways and without being fixed. Things can endlessly be grouped in new ways, in that sense the structure of a Linked Data ontology is more like a spider’s web.</p>
 <p><img alt="interface.jpg" src="../_images/interface.jpg" /></p>
 <p>On the Semantic Web, the RDF data model is used as a knowledge representation. The fundamental concepts of RDF are resources, properties, statements and graphs.</p>
 </div>
 <div class="section" id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
-<p>Resources can be many things, from people to places, from plants to machines, everything can be a resource. On the Semantic Web, each resource has a URI (Uniform Resource Locator, or web address) that allows an unambigous identification of that particular ‘thing’.</p>
-<p>For instance, we are searching for a particular person, let’s say Jack Straw. The unique identifier given to that person is a number comparible with a telephone number, it is a specific number through which you can find that person. However, Jack Straw is both the name of a fourteenth-century English rebel and a UK cabinet minister prominent in Tony Blair’s administration. It is clearly useful to be able to differentiate the two people who share a common name, so each person is represented by a unique number, let’s make the UK minister Jack Straw number 64183282, and Jack Straw described as ‘the enigmatic rebel leader’ number 33059614. Providing that everyone uses these two numbers to refer to the respective Jack Straws, we can now search for person 64183282 in a linked open dataset and can be confident that we are getting the right person - in this case, the minister.</p>
-<p>Jack Straw the modern politician was a member of British Parliament, representing the seat of Blackburn. There’s more than one place in the UK called Blackburn, not to mention other Blackburns around the world. Using the same principles as outlined above, we can disambiguate between the various Blackburns by assigning a unique identifier to the correct place: Blackburn in Lancashire, England.</p>
-<p>At first sights, this may look simular as a library system, but there is an essential difference. Around the world there are many libraries, each with their own database and each giving their own numbers to for example the person ‘Jack Straw’. So the number ‘330596140’ in a library system does no longer identify unique individuals outside of that particular database. In contrast, URI references are designed to be unique across the Web.</p>
+<p>Resources can be many things, from people to places, from plants to machines, everything can be a resource. On the Semantic Web, each resource has a URI (Uniform Resource Locator, or web address) that allows an unambiguous identification of that particular ‘thing’.</p>
+<p>For instance, we are searching for a particular person, let’s say Jack Straw. The unique identifier given to that person is a number comparable with a telephone number, it is a specific number through which you can find that person. However, Jack Straw is both the name of a fourteenth-century English rebel and a UK cabinet minister prominent in Tony Blair’s administration.</p>
+<p>It is clearly useful to be able to differentiate the two people who share a common name, so each person is represented by a unique number. With this in mind, let’s make the UK minister Jack Straw number 64183282, and Jack Straw described as ‘the enigmatic rebel leader’ number 33059614. Provided that everyone uses these two numbers to refer to the respective Jack Straws, we can now search for person 64183282 in a linked open dataset and can be confident that we are getting the right person, in this case, the minister.</p>
+<p>Jack Straw the modern politician was a member of the British Parliament, representing the seat of Blackburn. There’s more than one place in the UK called Blackburn, not to mention other Blackburns around the world. Using the same principles as outlined above, we can disambiguate between the various Blackburns by assigning a unique identifier to the correct place: Blackburn in Lancashire, England.</p>
+<p>At first sight, this may look similar to a library system, but there is a crucial difference. Around the world there are many libraries, each with their own database and each assigning their own identifiers to the person ‘Jack Straw’, for instance. So the number ‘330596140’ in a library system no longer identifies unique individuals outside of that particular database. In contrast, URI references are designed to be unique across the Web.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://video.leidenuniv.nl/embed/secure/iframe/entryId/1_cse3wkxj/uiConfId/44110401/st/0&#39;</span> <span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">640</span> <span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">360</span> <span class="p">))</span> 
@@ -418,7 +429,7 @@ height 22.6 cm × width 18.7 cm
 ></iframe>
 </div></div>
 </div>
-<p>Therefore, URIs are recorded in so-called authority files, such as the VIAF authority file. In the video above, the VIAF ID number ‘33059614’ is used as a search term to find Jack Straw in various libraries around the world. While all describe this person slightly different, they all mean the same person. Under the VIAF ID, there is a permalink, that’s the URI. HTTP URIs make it possible for people (as well as machines) to find concepts and idnetify that all these “Jack Straws” are the same person.</p>
+<p>Therefore, URIs are recorded in so-called authority files, such as the VIAF authority file. In the video above, the VIAF ID number ‘33059614’ is used as a search term to find Jack Straw in various libraries around the world. While all describe this person slightly differently, they all mean the same person. Under the VIAF ID, there is a permalink, that’s the URI. HTTP URIs make it possible for people (as well as machines) to find concepts and identify that all these “Jack Straws” are the same person.</p>
 </div>
 <div class="section" id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
@@ -442,7 +453,8 @@ Between 2016 and 2019, the British Museum and SOAS (University of London) used L
 </div>
 <div class="section" id="vocabularies">
 <h2>Vocabularies<a class="headerlink" href="#vocabularies" title="Permalink to this headline">¶</a></h2>
-<p>While RDF is an universal language, it does not describe all domain specific meanings. For example, RDF doesn’t allow a standard vocabulary to describe the metadata for an artwork or a book, for that more detailed ontology languages are needed that expand RDF Schema to represent more complex relationships between web objects and how they link to each other. This can be found in vocabularies, like Dublin Core (mostly used in libraries and archives), CIDOC CRM (for heritage documentation) or <a class="reference external" href="http://Schema.org">Schema.org</a> (founded by Google, Microsoft, Yahoo and Yandex, and expanded by Web communities).</p>
+<p>While RDF is an universal language, it does not describe all domain specific meanings.</p>
+<p>For example, RDF doesn’t allow a standard vocabulary to describe the metadata for an artwork or a book. In such cases, more detailed ontology languages that expand RDF Schema are needed, to represent more complex relationships between web objects and how they link to each other. This can be found in vocabularies, like Dublin Core (mostly used in libraries and archives), CIDOC CRM (for heritage documentation) or <a class="reference external" href="http://Schema.org">Schema.org</a> (founded by Google, Microsoft, Yahoo and Yandex, and expanded by Web communities).</p>
 <blockquote>
 <div><p><em><strong>CIDOC CRM</strong></em>
 For heritage institutions to be able to connect their data, it is essential that they use the same formal language to describe concepts and relationships. For the documentation of cultural heritage,  CIDOC CRM is serving as a foundation for how to describe heritage information across museums, libraries and archives. They offer so to say a shared semantic infrastructure. The latest version of the CIDOC-CRM vocabulary can be found on their website (<a class="reference external" href="https://www.cidoc-crm.org/">click here</a>).</p>
@@ -450,7 +462,7 @@ For heritage institutions to be able to connect their data, it is essential that
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>Linked data gives us a set of best practices to publish data on the Web. This technology is build through a layered approach with the following basic principles:</p>
+<p>Linked data gives us a set of best practices to publish data on the Web. This technology is built through a layered approach with the following basic principles:</p>
 <ul class="simple">
 <li><p>Concepts get a Unique identifier.</p></li>
 <li><p>The data is modeled according to RDF that can be viewed as a primitive language for writing ontologies.</p></li>
@@ -465,8 +477,8 @@ For heritage institutions to be able to connect their data, it is essential that
 <h2>Exercise 1.1.<a class="headerlink" href="#exercise-1-1" title="Permalink to this headline">¶</a></h2>
 <p>Within the forum (or on a Google doc), post a description of a person (e.g. an artist, scholar or author) using triples:</p>
 <ul class="simple">
-<li><p>Use angualr brackets (‘&lt;’ and ‘&gt;’) to enclose resources (things).</p></li>
-<li><p>Use quaotes (‘”’) to enclose values.</p></li>
+<li><p>Use angular brackets (‘&lt;’ and ‘&gt;’) to enclose resources (things).</p></li>
+<li><p>Use quotes (‘”’) to enclose values.</p></li>
 <li><p>Close triple expressions with a full stop (‘.’)</p></li>
 </ul>
 <p>For example:</p>
@@ -478,8 +490,8 @@ For heritage institutions to be able to connect their data, it is essential that
 </div>
 <div class="section" id="exercise-1-2">
 <h2>Exercise 1.2.<a class="headerlink" href="#exercise-1-2" title="Permalink to this headline">¶</a></h2>
-<p>Create a URI for the person that you selected. To find your URI, go to Wikidata and search for your artist or author.  The URI is the domainname starting <a class="reference external" href="https://www.wikidata.org/wiki">https://www.wikidata.org/wiki</a> followed by a Q-ID (the unique identifier of a data item on Wikidata, comprising the letter “Q” followed by one or more digits).
-Replace the <subject> in your triples with your <uri>.</p>
+<p>Create a URI for the person that you selected. To find your URI, go to Wikidata and search for your artist or author.  The URI is the domain name starting with <a class="reference external" href="https://www.wikidata.org/wiki">https://www.wikidata.org/wiki</a> followed by a Q-ID (the unique identifier of a data item on Wikidata, comprising the letter “Q” followed by one or more digits).
+Replace the &lt;subject&gt; in your triples with your &lt;uri&gt;.</p>
 <p>For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">wikidata</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">wiki</span><span class="o">/</span><span class="n">Q8958</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="ow">is</span> <span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">person</span><span class="o">&gt;</span> <span class="o">.</span>  
 <span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">wikidata</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">wiki</span><span class="o">/</span><span class="n">Q8958</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">was</span> <span class="n">born</span> <span class="ow">in</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">Mainz</span><span class="o">&gt;</span> <span class="o">.</span>  
