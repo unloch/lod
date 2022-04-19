@@ -234,6 +234,11 @@
      Illustration
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clariahs-tool-cow">
+     CLARIAH’s tool CoW
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -269,10 +274,11 @@
 </ul>
 <div class="section" id="publishing-linked-open-data">
 <h2>Publishing Linked Open data<a class="headerlink" href="#publishing-linked-open-data" title="Permalink to this headline">¶</a></h2>
-<p>The data that are made available by cultural heritage institutions can be very heterogenous. Institutions may use a wide variety of formats, including relational databases, CSV, XML documents or JSON. If the data is in one of these formats, it can be useful to convert these data sets into RDF first. When the data is available as Linked Data, it eventually becomes much easier to reuse the data and to integrate the data into other data collections.</p>
+<p>Cultural heritage institutions generally hold complex and heterogeneous data, which makes it difficult to integrate data across collections. Institutions may still use a wide variety of data formats, including relational databases, CSV, XML documents or JSON, but there is a growing consensus that RDF is the best approach to connect the multitude of data that cultural heritage institutions make available on the Web. If the data is in a format such as CSV, it can be useful to convert these data sets into RDF first so that it can be published as Linked Open Data on the Web.</p>
+<p>In this module, you will learn on how to create and publish data as Linked Open Data on the Web. You you will be introduced to the LDwizard and CLARIAH Data Legend tool ‘COW’.</p>
 <p>To convert a given data set into the RDF format, we can follow the steps below:</p>
 <p><em><strong>1. Create a conceptual model of the original data set.</strong></em></p>
-<p>In other words, make a clear and comprehensive list of all the entities and the properties of these entities that are described. You may describe this model in a simple text file, in which you enumerate these various properties. If you work with a single CSV file, listing all the column names specified in the header of the CSV file is usually sufficient. In the case of more complex databases, you may also make use of a more formal notation technique, such as an Entity Relationship Diagram.</p>
+<p>In other words, make a clear and comprehensive list of all the entities and the properties of these entities that are described. You may describe this model in a text file, in which you enumerate these various properties. If you work with a single CSV file, listing all the column names specified in the header of the CSV file is usually sufficient. In the case of more complex databases, you may also make use of a more formal notation technique, such as an Entity Relationship Diagram.</p>
 <p><em><strong>2. Find appropriate URIs for all the entities and the properties in the model.</strong></em></p>
 <p>You can use URIs in the following vocabularies:</p>
 <ul class="simple">
@@ -287,8 +293,8 @@
 </div>
 <div class="section" id="illustration">
 <h2>Illustration<a class="headerlink" href="#illustration" title="Permalink to this headline">¶</a></h2>
+<p><em><strong>Preparing a CSV file</strong></em></p>
 <p>This general process will be demonstrated using a very simple CSV file, consisting of four rows only.</p>
-<p><em><strong>Planning the data conversion</strong></em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ID</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">author</span><span class="p">,</span><span class="n">year_of_publication</span><span class="p">,</span><span class="n">publisher</span>
 <span class="mi">1</span><span class="p">,</span><span class="n">Brave</span> <span class="n">New</span> <span class="n">World</span><span class="p">,</span><span class="n">Aldous</span> <span class="n">Huxley</span><span class="p">,</span><span class="mi">1932</span><span class="p">,</span><span class="n">English</span><span class="p">,</span> <span class="n">Chatto</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">Windus</span>
 <span class="mi">2</span><span class="p">,</span><span class="mi">1984</span><span class="p">,</span><span class="n">George</span> <span class="n">Orwell</span><span class="p">,</span><span class="mi">1949</span><span class="p">,</span><span class="n">English</span><span class="p">,</span><span class="n">Secker</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">Warburg</span>
@@ -306,17 +312,35 @@
 <span class="n">Publisher</span>
 </pre></div>
 </div>
-<p>Once you have developed a sufficiently clear understanding of the model, you can begin to link the various properties that you have identified to URI. During this specific search, you can make use of Linked Open Vocabularies website. On this site, you can type in a property in the search bar at the top. This online application will then attempt to find matching terms. Using this website, we can find the following URIs for the colum names in our sample data set.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BOOK</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">BibliographicResource</span>
+<p>Once you have developed a sufficiently clear understanding of the model, you can begin to link the various properties that you have identified to URIs. During this specific search, you can make use of the <a class="reference external" href="https://lov.linkeddata.es/dataset/lov/">Linked Open Vocabularies</a> websites, for example. On this site, you can type in a property in the search bar at the top. This online application will then attempt to find matching terms.</p>
+<p>Using this website, we can find the following URIs for the colum names in our sample data set.</p>
+<ul class="simple">
+<li><p><span class="xref myst">Schema.org</span></p></li>
+<li><p><a class="reference external" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core terms</a></p></li>
+<li><p><a class="reference external" href="http://xmlns.com/foaf/spec/">FOAF</a></p></li>
+<li><p><a class="reference external" href="https://www.cidoc-crm.org/">CIDOC-CRM</a></p></li>
+</ul>
+<p>We can find the following URIs for the entities and the properties in our sample data set:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BOOK</span><span class="p">:</span> 
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">BibliographicResource</span>
 
-<span class="n">Title</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">title</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">schema</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">author</span>
-<span class="n">Year</span> <span class="n">of</span> <span class="n">publication</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">date</span>
-<span class="n">Language</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">language</span>
-<span class="n">Publisher</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">publisher</span>
+<span class="n">Title</span><span class="p">:</span> 
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">title</span>
+
+<span class="n">Author</span><span class="p">:</span> 
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">schema</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">author</span>
+
+<span class="n">Year</span> <span class="n">of</span> <span class="n">publication</span><span class="p">:</span> 
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">date</span>
+
+<span class="n">Language</span><span class="p">:</span> 
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">language</span>
+
+<span class="n">Publisher</span><span class="p">:</span> 
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">purl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dc</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="n">publisher</span>
 </pre></div>
 </div>
-<p>The association between “year of publication” and “dcterms:date” may be slightly questionable. The National Library of Germany has specified a more specific property “<a class="reference external" href="https://d-nb.info/standards/elementset/gnd#dateOfPublication">dateOfPublication</a>”. In this situation, we have have followed conventions that have emerged in this situation. Libraries often describe the year of publication using “dcterms:date”.</p>
+<p>The association between “year of publication” and “dcterms:date” may be slightly questionable. In this situation, we have have followed conventions that have emerged. Libraries often describe the year of publication using “dcterms:date”. The National Library of Germany has specified a more specific property, however, named “<a class="reference external" href="https://d-nb.info/standards/elementset/gnd#dateOfPublication">dateOfPublication</a>”.</p>
 <p>The column named “ID” will not be connected to a URI, as this columns will be used to identify the records. As identifiers for the individual books, we shall use the numbers given in the ID column of the CSV file.</p>
 <p>We are now ready to convert the CSV file. This tutorial will explain two tools: COW and LDWizard.</p>
 <p><em><strong>Converting CSV file to RDF using LDWizards</strong></em></p>
@@ -324,10 +348,10 @@
 <li><p>Open LDWizard via <a class="reference external" href="https://ldwizard.netwerkdigitaalerfgoed.nl/#1">https://ldwizard.netwerkdigitaalerfgoed.nl/#1</a></p></li>
 <li><p>Upload your CSV file.</p></li>
 <li><p>Under “Key column”, the various records in the data set ought to be identified. You can select one of the existing columns for this purpose. If none of the columns are suitable, you can also select the row number. In our example, we select the column named “ID”</p></li>
-<li><p>Under Resource class IRI, specify the type of reources that are being described in the data set. Note that you can also search for terms in the LDWizard. If you type in a term, the tool will suggest a number of valid suggestions. In this example, we select “<a class="reference external" href="http://purl.org/dc/terms/BibliographicResource">http://purl.org/dc/terms/BibliographicResource</a>”</p></li>
+<li><p>Under Resource class IRI, specify the type of reources that are being described in the data set. Note that you can also search for terms in the LDWizard. If you type in a term, the tool will suggest several valid suggestions. In our example, we select “<a class="reference external" href="http://purl.org/dc/terms/BibliographicResource">http://purl.org/dc/terms/BibliographicResource</a>”</p></li>
 <li><p>Supply a base URI under “Advanced”</p></li>
 <li><p>For each of the columns in your dataset, indicate the URI they should be connected to. You can copy and paste the URIs you found yourself, or you can make use of the pull-down menu provided by the LDWizard tool.</p></li>
-<li><p>When you have associated all the column named with URI, you can click on “Next”. On the page that opens after this, you can download the result as RDF. The RDF file will be saved as a file with the .nt extention. This RDF can be uploaded to a Triple Store.</p></li>
+<li><p>When you have associated all the column names with URIs, you can click on “Next”. On the page that opens after this, you can download the result as RDF. The RDF file will be saved as a file with the .nt extention. This RDF can be uploaded to a Triple Store.</p></li>
 </ol>
 <p>For this simple CSV file, the result looks as follows:</p>
 <div class="cell docutils container">
@@ -358,6 +382,36 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><div class="krn-spql"><div class="krn-error"><span class="title">Error:</span> no endpoint defined</div></div></div></div>
 </div>
+</div>
+<div class="section" id="clariahs-tool-cow">
+<h2>CLARIAH’s tool CoW<a class="headerlink" href="#clariahs-tool-cow" title="Permalink to this headline">¶</a></h2>
+<p>One of the tools CLARIAH developed for their goal is <a class="reference external" href="https://github.com/CLARIAH/COW">CoW</a>, which stands for <em>CSV on the Web converter</em>. CoW generates a schema in the JSON format for a specific CSV file. It then converts the dataset into an RDF structured file, so that it can be published as Linked Open Data. It is possible to use CoW through Python. You can find instructions on how to install Python in the Course Contents.</p>
+<p>Follow the steps below to install the Python version of CoW</p>
+<ol class="simple">
+<li><p>Open the Terminal or Command Prompt and instantiate a virtual Python environment.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sparql-nb notranslate"><div class="highlight"><pre><span></span>virtualenv . 
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Activate the virtual environment:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sparql-nb notranslate"><div class="highlight"><pre><span></span>source bin/activate 
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Install CoW in the new environment:</p></li>
+</ol>
+<p>pip install cow_csvw</p>
+<p>To get help, you can type in <code class="docutils literal notranslate"><span class="pre">cow_tool</span></code>.</p>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="exercises">
